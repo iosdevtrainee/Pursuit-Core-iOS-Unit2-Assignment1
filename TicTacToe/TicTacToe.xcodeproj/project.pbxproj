@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A6E1C6A219CB6D40013BAD3 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6E1C69219CB6D40013BAD3 /* Board.swift */; };
+		0A6E1CA6219CC9E70013BAD3 /* TicTacToeBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6E1CA5219CC9E70013BAD3 /* TicTacToeBoard.swift */; };
+		0A6E1CA8219CE8510013BAD3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6E1CA7219CE8510013BAD3 /* Player.swift */; };
 		57A2EF472194DBAF009B12CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A2EF462194DBAF009B12CA /* AppDelegate.swift */; };
 		57A2EF492194DBAF009B12CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A2EF482194DBAF009B12CA /* ViewController.swift */; };
 		57A2EF4C2194DBAF009B12CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A2EF4A2194DBAF009B12CA /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A6E1C69219CB6D40013BAD3 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		0A6E1CA5219CC9E70013BAD3 /* TicTacToeBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeBoard.swift; sourceTree = "<group>"; };
+		0A6E1CA7219CE8510013BAD3 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		57A2EF432194DBAF009B12CA /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A2EF462194DBAF009B12CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57A2EF482194DBAF009B12CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +45,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A6E1CA9219D15D60013BAD3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				57A2EF462194DBAF009B12CA /* AppDelegate.swift */,
+				57A2EF4D2194DBB0009B12CA /* Assets.xcassets */,
+				57A2EF4F2194DBB0009B12CA /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0A6E1CAA219D16320013BAD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57A2EF4A2194DBAF009B12CA /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A6E1CAB219D163F0013BAD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A6E1C69219CB6D40013BAD3 /* Board.swift */,
+				0A6E1CA7219CE8510013BAD3 /* Player.swift */,
+				0A6E1CA5219CC9E70013BAD3 /* TicTacToeBoard.swift */,
+				57A2EF582194DBFD009B12CA /* GameButton.swift */,
+				57A2EF5A2194DC83009B12CA /* TicTacToeBrain.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		57A2EF3A2194DBAF009B12CA = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +94,10 @@
 		57A2EF452194DBAF009B12CA /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
-				57A2EF462194DBAF009B12CA /* AppDelegate.swift */,
+				0A6E1CA9219D15D60013BAD3 /* Supporting Files */,
 				57A2EF482194DBAF009B12CA /* ViewController.swift */,
-				57A2EF4A2194DBAF009B12CA /* Main.storyboard */,
-				57A2EF582194DBFD009B12CA /* GameButton.swift */,
-				57A2EF5A2194DC83009B12CA /* TicTacToeBrain.swift */,
-				57A2EF4D2194DBB0009B12CA /* Assets.xcassets */,
-				57A2EF4F2194DBB0009B12CA /* LaunchScreen.storyboard */,
+				0A6E1CAA219D16320013BAD3 /* View */,
+				0A6E1CAB219D163F0013BAD3 /* Model */,
 				57A2EF522194DBB0009B12CA /* Info.plist */,
 			);
 			path = TicTacToe;
@@ -142,7 +175,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				57A2EF492194DBAF009B12CA /* ViewController.swift in Sources */,
+				0A6E1CA6219CC9E70013BAD3 /* TicTacToeBoard.swift in Sources */,
 				57A2EF592194DBFD009B12CA /* GameButton.swift in Sources */,
+				0A6E1C6A219CB6D40013BAD3 /* Board.swift in Sources */,
+				0A6E1CA8219CE8510013BAD3 /* Player.swift in Sources */,
 				57A2EF472194DBAF009B12CA /* AppDelegate.swift in Sources */,
 				57A2EF5B2194DC83009B12CA /* TicTacToeBrain.swift in Sources */,
 			);

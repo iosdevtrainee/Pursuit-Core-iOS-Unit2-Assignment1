@@ -2,13 +2,15 @@
 //  GameButton.swift
 //  TicTacToe
 //
-//  Created by Alex Paul on 11/8/18.
+//  Created by J on 11/8/18.
 //  Copyright © 2018 Pursuit. All rights reserved.
 //
 
 import UIKit
 
 class GameButton: UIButton {
+  // Allows you to edit these properties from the story
+  // board
   @IBInspectable var row: Int = 0
   @IBInspectable var col: Int = 0
 }
