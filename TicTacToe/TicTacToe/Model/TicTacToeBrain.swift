@@ -17,27 +17,24 @@ class TicTacToeBrain {
    */
   private var playerOne: Player
   private var playerTwo: Player
-  private var board: TicTacToeBoard {
-    didSet {
-      self.toggle()
-      counter += 1
-    }
-  }
+  private var board: TicTacToeBoard
   init() {
     self.playerOne = Player.init(piece: Piece.x, name:"Player 1")
     self.playerTwo = Player.init(piece: Piece.o, name:"Player 2")
     self.currentPlayer = self.playerOne
     self.board = TicTacToeBoard(rows: 3, cols: 3)
   }
-  public func checkIfPlayerWon(position:Position,piece:Piece) -> (player:Player,won:Bool){
+  public func checkIfPlayerWon(position:Position,player:Player) -> (player:Player,won:GameStatus?){
 //    let firstCheck = checkDiagonal(position: position, piece: piece, matrix: board.positions)
-    let diagonalsWon = checkDiagonals(position: position, piece: piece)
-    let rowsWon = checkRow(position: position, piece: piece)
-    let colsWon = checkColumn(position: position, piece: piece)
+    let diagonalsWon = checkDiagonals(position: position, piece: player.piece)
+    let rowsWon = checkRow(position: position, piece: player.piece)
+    let colsWon = checkColumn(position: position, piece: player.piece)
     if diagonalsWon || rowsWon || colsWon {
-      return (player:currentPlayer,won:true)
+      print("\(player) won!")
+      return (player:player,won:.win)
+      
     }
-    return (player:currentPlayer,won:false)
+    return (player:player,won:nil)
   }
   
   private func checkRow(position:Position, piece:Piece) -> Bool {
@@ -89,13 +86,14 @@ class TicTacToeBrain {
   private func toggle(){
     self.currentPlayer = self.currentPlayer == self.playerOne ? self.playerTwo : self.playerOne
   }
-  public func updateBoard(position:[Int]) -> (player:Player,won:Bool){
-    if let row = position.first, let col = position.last {
-      let boardPosition = Position.init(row: row, col: col)
-      return checkIfPlayerWon(position: boardPosition, piece: currentPlayer.piece)
-    }
-    print("Enter an array with only two elements")
-    return (player:currentPlayer, won:false)
+  public func updateBoard(position:(row:Int,col:Int)) -> (player:Player,won:GameStatus?){
+      let boardPosition = Position.init(row: position.row, col: position.col)
+      board.add(piece: currentPlayer.piece, position: boardPosition)
+      counter += 1
+      let player = currentPlayer
+      self.toggle()
+      print(board.positions)
+      return checkIfPlayerWon(position: boardPosition, player:player)
   }
 }
 

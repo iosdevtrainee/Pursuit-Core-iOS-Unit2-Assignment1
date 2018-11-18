@@ -14,14 +14,17 @@ protocol Board {
 }
 
 enum Piece: String {
-  case x
-  case o
-  case blank
+  case x, o, blank
 }
 
+enum GameStatus: String {
+  case win, lose, tie
+}
 
 
 struct Position {
   var row: Int
   var col: Int
 }
+
+
